@@ -1,0 +1,31 @@
+:root {
+  --page-content-padding: 40px;
+
+  /* colors */
+  --text-color: #404040;
+
+  /* box-shadow */
+  --box-shadow-main: 0 0.33px 0 rgba(60, 60, 67, .29);
+  --box-shadow-secondary: 0 4px 40px rgba(0, 0, 0, 0.07);
+
+  /* page sizes */
+  --size-desktop: 1200px;
+  --size-tablet: 768px;
+  --size-mobile: 320px;
+
+  /* transitions */
+  --transition-duration-short: 200ms;
+  --transition-duration-fast: 350ms;
+
+  /* border-radius */
+  --border-radius-very-small: 4px;
+  --border-radius-small: 8px;
+  --border-radius-middle: 10px;
+
+  --z-index-header: 2;
+  --z-index-swiper-btn: 3;
+  --z-index-swiper-loading: 4;
+
+  /* font-family */
+  --font-family-inter: 'Inter', sans-serif;
+}
