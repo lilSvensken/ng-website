@@ -1,6 +1,8 @@
 @import "src/app/styles/normalize";
 @import "src/app/styles/fontface";
+@import "src/app/styles/minxins";
 @import "src/app/styles/consts";
+@import "src/app/styles/global";
 
 body {
   font-family: var(--font-family-inter);

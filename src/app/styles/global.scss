@@ -1,7 +1,7 @@
-.page-content {
+.gl-page-content {
   padding-left: var(--page-content-padding);
   padding-right: var(--page-content-padding);
-  max-width: calc(1200px + var(--page-content-padding) * 2);
+  max-width: calc(var(--with-content) + var(--page-content-padding) * 2);
   margin-left: auto;
   margin-right: auto;
 }
