@@ -8,12 +8,6 @@ import { BrowserModule } from '@angular/platform-browser';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
-  providers: [
-    // {
-    //   provide: ENVIRONMENT,
-    //   useValue: environment,
-    // },
-  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
