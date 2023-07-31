@@ -224,8 +224,6 @@ template {
 :root {
   --page-content-padding: 40px;
   --with-content: 1200px;
-  /* colors */
-  --text-color: #404040;
   /* transitions */
   --transition-duration-short: 200ms;
   --transition-duration-fast: 350ms;
@@ -255,8 +253,21 @@ template {
   margin-right: auto;
 }
 
+.dark {
+  /* colors */
+  --text-color: #FFF;
+}
+
+.light {
+  /* colors */
+  --text-color: #404040;
+}
+
 body {
   font-family: var(--font-family-inter);
+}
+
+.app {
   color: var(--text-color);
 }
 

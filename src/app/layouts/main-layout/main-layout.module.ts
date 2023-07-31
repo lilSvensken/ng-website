@@ -5,7 +5,8 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from 'widgets/header/header.component';
 import { TaskbarComponent } from 'widgets/taskbar/taskbar.component';
-import { SvgLogoComponent } from '../../../shared/icons/logo/svg-logo.component';
+import { SvgLogoComponent } from 'shared/icons/logo/svg-logo.component';
+import { ThemesToggleComponent } from '../../../features/themes-toggle/themes-toggle.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [MainLayoutComponent, HeaderComponent, TaskbarComponent, SvgLogoComponent],
+  declarations: [
+    MainLayoutComponent,
+    HeaderComponent,
+    TaskbarComponent,
+    SvgLogoComponent,
+    ThemesToggleComponent,
+  ],
   imports: [CommonModule, RouterModule.forChild(routes), NgOptimizedImage],
   exports: [HeaderComponent],
 })

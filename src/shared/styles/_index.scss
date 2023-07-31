@@ -3,8 +3,13 @@
 @import "minxins";
 @import "consts";
 @import "global";
+@import "themes/dark";
+@import "themes/normal";
 
 body {
   font-family: var(--font-family-inter);
+}
+
+.app {
   color: var(--text-color);
 }
