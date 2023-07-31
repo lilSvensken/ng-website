@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { IsAuthGuard } from './guards/is-auth.guard';
+import { IsNotAuthGuard } from './guards/is-not-auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('app/app-parts/auth-part/auth-part.module').then((m) => m.AuthPartModule),
+      import('app/layouts/main-layout/main-layout.module').then((m) => m.MainLayoutModule),
+    canActivate: [IsAuthGuard],
   },
   {
     path: 'auth',
     loadChildren: () =>
-      import('app/app-parts/not-auth-part/not-auth-part.module').then((m) => m.NotAuthPartModule),
+      import('app/layouts/not-auth-layout/not-auth-layout.module').then(
+        (m) => m.NotAuthLayoutModule,
+      ),
+    canActivate: [IsNotAuthGuard],
   },
 ];
 

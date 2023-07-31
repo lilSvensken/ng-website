@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { AuthPartComponent } from './auth-part.component';
+import { MainLayoutComponent } from './main-layout.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from 'widgets/header/header.component';
@@ -9,7 +9,7 @@ import { TaskbarComponent } from 'widgets/taskbar/taskbar.component';
 const routes: Routes = [
   {
     path: '',
-    component: AuthPartComponent,
+    component: MainLayoutComponent,
     children: [
       {
         path: '',
@@ -21,8 +21,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AuthPartComponent, HeaderComponent, TaskbarComponent],
+  declarations: [MainLayoutComponent, HeaderComponent, TaskbarComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [HeaderComponent],
 })
-export class AuthPartModule {}
+export class MainLayoutModule {}

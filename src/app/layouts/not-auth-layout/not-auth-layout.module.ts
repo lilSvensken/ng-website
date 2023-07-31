@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { NotAuthPartComponent } from './not-auth-part.component';
+import { NotAuthLayoutComponent } from './not-auth-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: NotAuthPartComponent,
+    component: NotAuthLayoutComponent,
     children: [],
   },
 ];
 
 @NgModule({
-  declarations: [NotAuthPartComponent],
+  declarations: [NotAuthLayoutComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
-export class NotAuthPartModule {}
+export class NotAuthLayoutModule {}
