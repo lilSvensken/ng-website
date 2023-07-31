@@ -3,7 +3,11 @@ $sz-tablet: 768px;
 $sz-mobile: 375px;
 
 :root {
-  --page-content-padding: 20px;
+  --page-content-padding: 40px;
+  @media screen and (max-width: $sz-tablet) {
+    --page-content-padding: 20px;
+  }
+
   @media screen and (max-width: $sz-mobile) {
     --page-content-padding: 10px;
   }

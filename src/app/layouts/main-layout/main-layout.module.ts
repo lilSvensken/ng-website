@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 
 import { MainLayoutComponent } from './main-layout.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from 'widgets/header/header.component';
 import { TaskbarComponent } from 'widgets/taskbar/taskbar.component';
+import { SvgLogoComponent } from '../../../shared/icons/logo/svg-logo.component';
 
 const routes: Routes = [
   {
@@ -21,8 +22,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [MainLayoutComponent, HeaderComponent, TaskbarComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  declarations: [MainLayoutComponent, HeaderComponent, TaskbarComponent, SvgLogoComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), NgOptimizedImage],
   exports: [HeaderComponent],
 })
 export class MainLayoutModule {}
