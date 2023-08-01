@@ -1,17 +1,14 @@
 .toggle-theme {
   display: none;
 }
-.toggle-theme:checked + .toggle-theme-content {
-  background-color: black;
-}
 
 .toggle-theme-content {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   border-radius: var(--border-radius-very-small);
-  background-color: white;
+  background-color: var(--text-color);
 }
 
 /*# sourceMappingURL=themes-toggle.component.css.map */
