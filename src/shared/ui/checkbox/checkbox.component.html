@@ -1,0 +1,14 @@
+<label class="checkbox-wrapper">
+  <input
+    class="checkbox"
+    type="checkbox"
+    [name]="name"
+    [ngModel]="valueControl"
+    (ngModelChange)="updateValue($event)"
+    [disabled]="disabled"
+  />
+  <span class="visible-checkbox">
+    <span class="content"></span>
+    <span class="caption">{{ caption }}</span>
+  </span>
+</label>

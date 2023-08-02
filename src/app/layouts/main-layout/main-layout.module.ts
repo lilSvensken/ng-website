@@ -12,6 +12,7 @@ import { BackgroundComponent } from './components/background/background.componen
 import { ClockComponent } from '../../../widgets/header/components/clock/clock.component';
 import { SimpleClockComponent } from '../../../widgets/header/components/clock/components/simple-clock/simple-clock.component';
 import { SettingsPanelComponent } from '../../../widgets/header/components/clock/components/settings-panel/settings-panel.component';
+import { CheckboxComponent } from '../../../shared/ui/checkbox/checkbox.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
     ClockComponent,
     SimpleClockComponent,
     SettingsPanelComponent,
+    CheckboxComponent,
   ],
   imports: [
     CommonModule,

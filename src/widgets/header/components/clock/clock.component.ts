@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-export enum ClockTheme {
-  Simple = 'simple',
-  Drum = 'drum',
-  Mechanical = 'mechanical',
-}
-
 @Component({
   selector: 'app-clock',
   templateUrl: './clock.component.html',

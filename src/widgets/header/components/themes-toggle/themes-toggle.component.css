@@ -8,7 +8,7 @@
   height: 30px;
   cursor: pointer;
   border-radius: var(--border-radius-very-small);
-  background-color: var(--text-color);
+  background-color: var(--main-color);
 }
 
 /*# sourceMappingURL=themes-toggle.component.css.map */
