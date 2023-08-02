@@ -1,0 +1,7 @@
+<div class="container">
+  <app-simple-clock />
+
+  <button type="button" (click)="changeShowSettings()">S</button>
+
+  <app-settings-panel class="settings-panel" [class.show]="isShowSettings$ | async" />
+</div>

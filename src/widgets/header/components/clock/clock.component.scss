@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+}
+
+.settings-panel {
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(70%);
+  transition: all var(--transition-duration-fast);
+  pointer-events: none;
+
+  &.show {
+    transform: translateY(100%);
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
