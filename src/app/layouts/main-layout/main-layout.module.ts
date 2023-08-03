@@ -9,10 +9,10 @@ import { SvgLogoComponent } from 'shared/icons/logo/svg-logo.component';
 import { ThemesToggleComponent } from 'widgets/header/components/themes-toggle/themes-toggle.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BackgroundComponent } from './components/background/background.component';
-import { ClockComponent } from '../../../widgets/header/components/clock/clock.component';
-import { SimpleClockComponent } from '../../../widgets/header/components/clock/components/simple-clock/simple-clock.component';
-import { SettingsPanelComponent } from '../../../widgets/header/components/clock/components/settings-panel/settings-panel.component';
-import { CheckboxComponent } from '../../../shared/ui/checkbox/checkbox.component';
+import { ClockComponent } from 'widgets/header/components/clock/clock.component';
+import { SimpleClockComponent } from 'widgets/header/components/clock/components/simple-clock/simple-clock.component';
+import { CheckboxComponent } from 'shared/ui/checkbox/checkbox.component';
+import { PopupComponent } from 'shared/ui/popup/popup.component';
 
 const routes: Routes = [
   {
@@ -38,8 +38,8 @@ const routes: Routes = [
     BackgroundComponent,
     ClockComponent,
     SimpleClockComponent,
-    SettingsPanelComponent,
     CheckboxComponent,
+    PopupComponent,
   ],
   imports: [
     CommonModule,

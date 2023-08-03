@@ -1,19 +1,13 @@
-.container {
-  position: relative;
+@import "shared/styles/minxins";
+
+.settings-form {
+  margin-top: 10px;
 }
 
-.settings-panel {
-  position: absolute;
-  opacity: 0;
-  bottom: 0;
-  right: 0;
-  transform: translateY(70%);
-  transition: all var(--transition-duration-fast);
-  pointer-events: none;
+.settings-checkboxes-list {
+  margin-top: 12px;
+}
 
-  &.show {
-    transform: translateY(100%);
-    opacity: 1;
-    pointer-events: initial;
-  }
+.settings-title {
+  @include resetBaseStyles;
 }

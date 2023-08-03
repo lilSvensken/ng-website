@@ -3,5 +3,17 @@
 
   <button type="button" (click)="changeShowSettings()">S</button>
 
-  <app-settings-panel class="settings-panel" [class.show]="isShowSettings$ | async" />
+  <app-popup [isShow]="isShowSettings$ | async">
+    <h3 class="settings-title">Настройки</h3>
+
+    <form [formGroup]="form" class="settings-form">
+      <div class="settings-caption">Внешний вид</div>
+
+      <div class="settings-checkboxes-list">
+        <app-checkbox [caption]="'Простой'" name="theme" formControlName="type" value="simple" />
+        <app-checkbox [caption]="'Барабан'" name="theme" formControlName="type" value="2" />
+        <app-checkbox [caption]="'Механические'" name="theme" formControlName="type" value="3" />
+      </div>
+    </form>
+  </app-popup>
 </div>
