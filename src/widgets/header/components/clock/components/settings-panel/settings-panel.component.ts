@@ -21,7 +21,7 @@ export class SettingsPanelComponent {
 
   constructor() {
     this.form.valueChanges.pipe(untilDestroyed(this)).subscribe((value) => {
-      console.log(value);
+      console.log(value.type);
     });
   }
 }

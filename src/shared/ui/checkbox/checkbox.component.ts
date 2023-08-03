@@ -1,11 +1,5 @@
 import { AfterViewInit, Component, forwardRef, Injector, Input } from '@angular/core';
-import {
-  AbstractControl,
-  ControlValueAccessor,
-  FormControl,
-  NG_VALUE_ACCESSOR,
-  NgControl,
-} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl } from '@angular/forms';
 
 @Component({
   selector: 'app-checkbox',
@@ -27,31 +21,25 @@ export class CheckboxComponent implements ControlValueAccessor, AfterViewInit {
   valueControl = false;
   disabled = false;
 
-  ngControl: any;
-  parentControl: FormControl | AbstractControl | any;
+  ngControl: NgControl;
 
   constructor(private inj: Injector) {}
 
   ngAfterViewInit(): void {
     this.ngControl = this.inj.get(NgControl);
-    setTimeout(() => {
-      this.parentControl = this.ngControl.control;
-    });
   }
 
-  private onChange = (newValue: (string | undefined)[]) => {
-    console.log('onChange:', newValue);
-  };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
+  private onChange = (newValue: string[]) => {};
 
-  private onTouched = () => {
-    console.log('onTouched');
-  };
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private onTouched = () => {};
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: () => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
@@ -66,11 +54,12 @@ export class CheckboxComponent implements ControlValueAccessor, AfterViewInit {
   updateValue(insideValue: boolean): void {
     this.valueControl = insideValue;
 
-    let newValue = this.parentControl.value;
-    if (newValue.includes(this.value)) {
-      newValue = newValue.filter((item: string) => item !== this.value);
+    let newValue: string[] = [];
+    const parentControlValue = this.ngControl.control.value;
+    if (parentControlValue.includes(this.value)) {
+      newValue = [...parentControlValue].filter((item: string) => item !== this.value);
     } else {
-      newValue = [...newValue, this.value];
+      newValue = [...parentControlValue, this.value];
     }
 
     this.onChange(newValue);
