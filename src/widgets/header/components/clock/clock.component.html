@@ -3,7 +3,7 @@
 
   <button type="button" (click)="changeShowSettings()">S</button>
 
-  <app-popup [isShow]="isShowSettings$ | async">
+  <app-popup [name]="'CLOCK'">
     <h3 class="settings-title">Настройки</h3>
 
     <form [formGroup]="form" class="settings-form">

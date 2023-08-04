@@ -1,4 +1,4 @@
-<div class="popup-container" [class.show]="isShow">
+<div class="popup-container" [class.show]="isShow$ | async">
   <div class="popup-content">
     <ng-content />
   </div>

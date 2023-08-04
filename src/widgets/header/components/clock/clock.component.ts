@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { PopupName, PopupsService } from 'app/services/popups.service';
 
 @UntilDestroy()
 @Component({
@@ -10,20 +10,18 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
   styleUrls: ['./clock.component.scss'],
 })
 export class ClockComponent {
-  private readonly _isShowSettings$ = new BehaviorSubject<boolean>(false);
-  readonly isShowSettings$ = this._isShowSettings$.asObservable();
-
   form = new FormGroup({
     type: new FormControl<string[]>(['simple']),
   });
 
-  constructor() {
+  constructor(private readonly _popupsService: PopupsService) {
     this.form.valueChanges.pipe(untilDestroyed(this)).subscribe((value) => {
       console.log(value.type);
     });
   }
 
   public changeShowSettings(): void {
-    this._isShowSettings$.next(!this._isShowSettings$.value);
+    const isOpenCurrent = this._popupsService.isOpenPopup(PopupName.Clock);
+    this._popupsService.changeStatusPopup(PopupName.Clock, !isOpenCurrent);
   }
 }
