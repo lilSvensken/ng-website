@@ -1,7 +1,23 @@
+@import "shared/styles/minxins";
+
 .gl-page-content {
   padding-left: var(--page-content-padding);
   padding-right: var(--page-content-padding);
   max-width: calc(var(--with-content) + var(--page-content-padding) * 2);
   margin-left: auto;
   margin-right: auto;
+}
+
+.gl-btn {
+  @include resetBaseStyles;
+  padding: 10px;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  transition: all var(--transition-duration-short);
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }

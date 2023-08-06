@@ -1,18 +1,60 @@
 <div class="container">
   <app-simple-clock />
 
-  <button type="button" (click)="changeShowSettings()">S</button>
+  <button type="button" (click)="changeShowSettings()" class="gl-btn btn-settings">⚙</button>
 
   <app-popup [name]="'CLOCK'">
     <h3 class="settings-title">Настройки</h3>
 
     <form [formGroup]="form" class="settings-form">
-      <div class="settings-caption">Внешний вид</div>
+      <div class="settings-block">
+        <div class="settings-caption">Внешний вид</div>
 
-      <div class="settings-checkboxes-list">
-        <app-checkbox [caption]="'Простой'" name="theme" formControlName="type" value="simple" />
-        <app-checkbox [caption]="'Барабан'" name="theme" formControlName="type" value="2" />
-        <app-checkbox [caption]="'Механические'" name="theme" formControlName="type" value="3" />
+        <div class="settings-checkboxes-list">
+          <app-radio
+            formControlName="type"
+            name="type"
+            [caption]="ClockType.Simple"
+            [value]="ClockType.Simple"
+          />
+          <app-radio
+            name="type"
+            formControlName="type"
+            [caption]="ClockType.Drum"
+            [value]="ClockType.Drum"
+          />
+          <app-radio
+            formControlName="type"
+            name="type"
+            [caption]="ClockType.Mechanical"
+            [value]="ClockType.Mechanical"
+          />
+        </div>
+      </div>
+
+      <div class="settings-block">
+        <div class="settings-caption">Размер</div>
+
+        <div class="settings-checkboxes-list">
+          <app-radio
+            formControlName="size"
+            name="size"
+            [caption]="ClockSize.Big"
+            [value]="ClockSize.Big"
+          />
+          <app-radio
+            formControlName="size"
+            name="size"
+            [caption]="ClockSize.Middle"
+            [value]="ClockSize.Middle"
+          />
+          <app-radio
+            formControlName="size"
+            name="size"
+            [caption]="ClockSize.Small"
+            [value]="ClockSize.Small"
+          />
+        </div>
       </div>
     </form>
   </app-popup>

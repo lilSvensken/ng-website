@@ -3,6 +3,18 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { PopupName, PopupsService } from 'app/services/popups.service';
 
+enum ClockType {
+  Simple = 'Простой',
+  Drum = 'Барабан',
+  Mechanical = 'Механические',
+}
+
+enum ClockSize {
+  Big = 'Большой',
+  Middle = 'Средний',
+  Small = 'Маленький',
+}
+
 @UntilDestroy()
 @Component({
   selector: 'app-clock',
@@ -11,12 +23,15 @@ import { PopupName, PopupsService } from 'app/services/popups.service';
 })
 export class ClockComponent {
   form = new FormGroup({
-    type: new FormControl<string[]>(['simple']),
+    type: new FormControl<ClockType>(ClockType.Simple),
+    size: new FormControl<ClockSize>(ClockSize.Middle),
   });
+  readonly ClockType = ClockType;
+  readonly ClockSize = ClockSize;
 
   constructor(private readonly _popupsService: PopupsService) {
     this.form.valueChanges.pipe(untilDestroyed(this)).subscribe((value) => {
-      console.log(value.type);
+      console.log(value);
     });
   }
 

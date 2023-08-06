@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.radio {
+  display: none;
+
+  &:checked {
+    + .visible-radio {
+      .content {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.visible-radio {
+  display: flex;
+  cursor: pointer;
+}
+
+.content {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--secondary-color);
+  border-radius: 100%;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background-color: var(--main-color);
+    opacity: 0;
+    transition: opacity var(--transition-duration-short);
+  }
+}
+
+.caption {
+  font-size: 14px;
+  margin-left: 10px;
+}

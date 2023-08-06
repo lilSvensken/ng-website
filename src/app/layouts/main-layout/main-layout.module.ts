@@ -11,8 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BackgroundComponent } from './components/background/background.component';
 import { ClockComponent } from 'widgets/header/components/clock/clock.component';
 import { SimpleClockComponent } from 'widgets/header/components/clock/components/simple-clock/simple-clock.component';
-import { CheckboxComponent } from 'shared/ui/checkbox/checkbox.component';
 import { PopupComponent } from 'shared/ui/popup/popup.component';
+import { RadioModule } from '../../../shared/ui/radio/radio.module';
 
 const routes: Routes = [
   {
@@ -38,7 +38,6 @@ const routes: Routes = [
     BackgroundComponent,
     ClockComponent,
     SimpleClockComponent,
-    CheckboxComponent,
     PopupComponent,
   ],
   imports: [
@@ -47,6 +46,7 @@ const routes: Routes = [
     NgOptimizedImage,
     ReactiveFormsModule,
     FormsModule,
+    RadioModule,
   ],
   exports: [HeaderComponent],
 })

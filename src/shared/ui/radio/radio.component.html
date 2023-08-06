@@ -1,0 +1,15 @@
+<label class="radio-wrapper">
+  <input
+    class="radio"
+    type="radio"
+    [value]="value"
+    [name]="name"
+    [ngModel]="valueControl"
+    (ngModelChange)="updateValue($event)"
+    [disabled]="disabled"
+  />
+  <span class="visible-radio">
+    <span class="content"></span>
+    <span class="caption">{{ caption }}</span>
+  </span>
+</label>
