@@ -26,6 +26,7 @@ export class ClockComponent {
     type: new FormControl<ClockType>(ClockType.Simple),
     size: new FormControl<ClockSize>(ClockSize.Middle),
   });
+  readonly PopupName = PopupName;
   readonly ClockType = ClockType;
   readonly ClockSize = ClockSize;
 
