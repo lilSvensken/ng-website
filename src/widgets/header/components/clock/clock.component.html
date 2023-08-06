@@ -1,5 +1,8 @@
 <div class="container">
-  <app-simple-clock />
+  <div [ngSwitch]="form.value.type">
+    <app-simple-clock *ngSwitchCase="ClockType.Simple" />
+    <app-drum-clock *ngSwitchCase="ClockType.Drum" />
+  </div>
 
   <button type="button" (click)="changeShowSettings()" class="gl-btn btn-settings">⚙</button>
 
