@@ -1,0 +1,31 @@
+$sz-desk: 1200px;
+$sz-tablet: 768px;
+$sz-mobile: 375px;
+
+:root {
+  --page-content-padding: 40px;
+  @media screen and (max-width: $sz-tablet) {
+    --page-content-padding: 20px;
+  }
+
+  @media screen and (max-width: $sz-mobile) {
+    --page-content-padding: 10px;
+  }
+
+  --with-content: 1200px;
+
+  /* transitions */
+  --transition-duration-short: 200ms;
+  --transition-duration-fast: 350ms;
+
+  /* border-radius */
+  --border-radius-very-small: 2px;
+  --border-radius-small: 8px;
+  --border-radius-middle: 10px;
+
+  /* font-family */
+  // todo разобраться со шрифтом
+  --font-family-inter: 'Roboto', sans-serif;
+
+  --z-index-modal: 1;
+}

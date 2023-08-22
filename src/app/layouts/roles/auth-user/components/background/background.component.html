@@ -1,0 +1,18 @@
+<div [ngSwitch]="themeService.theme$ | async">
+  <img
+    *ngSwitchCase="Theme.Dark"
+    ngSrc="../../../../../assets/images/wallpaper-dark.jpg"
+    alt="wallpaper"
+    height="1440"
+    width="2560"
+    class="img"
+  />
+  <img
+    *ngSwitchCase="Theme.Light"
+    ngSrc="../../../../../assets/images/wallpaper-light.jpg"
+    alt="wallpaper"
+    height="1440"
+    width="2560"
+    class="img"
+  />
+</div>
