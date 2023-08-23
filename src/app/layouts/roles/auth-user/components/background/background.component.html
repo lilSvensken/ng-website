@@ -1,7 +1,7 @@
 <div [ngSwitch]="themeService.theme$ | async">
   <img
     *ngSwitchCase="Theme.Dark"
-    ngSrc="../../../../../assets/images/wallpaper-dark.jpg"
+    ngSrc="assets/images/wallpaper-dark.jpg"
     alt="wallpaper"
     height="1440"
     width="2560"
@@ -9,7 +9,7 @@
   />
   <img
     *ngSwitchCase="Theme.Light"
-    ngSrc="../../../../../assets/images/wallpaper-light.jpg"
+    ngSrc="assets/images/wallpaper-light.jpg"
     alt="wallpaper"
     height="1440"
     width="2560"

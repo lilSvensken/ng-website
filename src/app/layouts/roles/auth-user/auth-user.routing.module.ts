@@ -8,16 +8,16 @@ const routes: Routes = [
     component: AuthUserComponent,
     children: [
       {
-        path: 'main',
+        path: '',
         loadChildren: () =>
-          import('app/pages/main-page/main-page.component').then((m) => m.MainPageComponent),
+          import('app/pages/main-page/main-page.module').then((m) => m.MainPageModule),
       },
     ],
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class AuthUserRoutingModule {}
