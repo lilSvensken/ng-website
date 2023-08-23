@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-simple-clock',
   templateUrl: './simple-clock.component.html',
   styleUrls: ['./simple-clock.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleClockComponent {
   d = new Date();

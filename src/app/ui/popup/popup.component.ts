@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { PopupsService } from 'app/shared/services/popups.service';
 
@@ -8,6 +8,7 @@ import { PopupsService } from 'app/shared/services/popups.service';
   selector: 'app-popup',
   templateUrl: './popup.component.html',
   styleUrls: ['./popup.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PopupComponent {
   @Input() name: string;
