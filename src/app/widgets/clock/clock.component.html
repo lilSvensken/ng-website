@@ -1,10 +1,13 @@
 <div class="container">
-  <div [ngSwitch]="form.value.type">
-    <app-simple-clock *ngSwitchCase="ClockType.Simple" />
-    <app-drum-clock *ngSwitchCase="ClockType.Drum" />
-  </div>
+  <div class="content">
+    <div [ngSwitch]="form.value.type">
+      <app-simple-clock *ngSwitchCase="ClockType.Simple" />
+      <app-drum-clock *ngSwitchCase="ClockType.Drum" />
+      <app-mechanical-clock *ngSwitchCase="ClockType.Mechanical" />
+    </div>
 
-  <button type="button" (click)="changeShowSettings()" class="gl-btn btn-settings">⚙</button>
+    <button type="button" (click)="changeShowSettings()" class="btn-settings">⚙</button>
+  </div>
 
   <app-settings-panel [form]="form" />
 </div>

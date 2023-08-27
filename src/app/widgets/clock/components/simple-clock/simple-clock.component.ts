@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TimeService } from 'app/shared/services/time.service';
 
 @Component({
   selector: 'app-simple-clock',
@@ -7,9 +8,5 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleClockComponent {
-  d = new Date();
-
-  constructor() {
-    console.log(this.d.toLocaleTimeString());
-  }
+  constructor(readonly timeService: TimeService) {}
 }

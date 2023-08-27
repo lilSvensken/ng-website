@@ -1,25 +1,20 @@
 @import "app/styles/minxins";
 
+.container {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.content {
+  display: flex;
+}
+
 .btn-settings {
-  padding: 0;
-  width: 40px;
-  height: 30px;
-}
-
-.settings-form {
-  margin-top: 10px;
-}
-
-.settings-block {
-  & + & {
-    margin-top: 12px;
-  }
-}
-
-.settings-checkboxes-list {
-  margin-top: 12px;
-}
-
-.settings-title {
   @include resetBaseStyles;
+  background-color: transparent;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  color: var(--main-color);
+  margin-left: 10px;
 }

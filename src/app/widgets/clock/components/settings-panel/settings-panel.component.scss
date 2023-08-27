@@ -1,0 +1,17 @@
+.settings-form {
+  margin-top: 10px;
+}
+
+.settings-block {
+  & + & {
+    margin-top: 12px;
+  }
+}
+
+.settings-checkboxes-list {
+  margin-top: 12px;
+}
+
+.settings-title {
+  @include resetBaseStyles;
+}
