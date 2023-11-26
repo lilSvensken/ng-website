@@ -8,6 +8,7 @@ import { SimpleClockComponent } from './components/simple-clock/simple-clock.com
 import { DrumClockComponent } from './components/drum-clock/drum-clock.component';
 import { SettingsPanelComponent } from './components/settings-panel/settings-panel.component';
 import { MechanicalClockComponent } from './components/mechanical-clock/mechanical-clock.component';
+import { TransformForSecondModule } from 'app/shared/directives/transform-for-second/transform-for-second.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,14 @@ import { MechanicalClockComponent } from './components/mechanical-clock/mechanic
     SettingsPanelComponent,
     MechanicalClockComponent,
   ],
-  imports: [CommonModule, NgOptimizedImage, RadioModule, ReactiveFormsModule, PopupModule],
+  imports: [
+    CommonModule,
+    NgOptimizedImage,
+    RadioModule,
+    ReactiveFormsModule,
+    PopupModule,
+    TransformForSecondModule,
+  ],
   exports: [ClockComponent],
 })
 export class ClockModule {}
