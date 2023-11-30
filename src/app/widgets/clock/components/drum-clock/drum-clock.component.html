@@ -1,6 +1,37 @@
-<div>
-  <p>drum-clock</p>
-  <div>Sec: {{ (dateAndTimeService.time$ | async).Sec }}</div>
-  <div>Min: {{ (dateAndTimeService.time$ | async).Min }}</div>
-  <div>Hr: {{ (dateAndTimeService.time$ | async).Hr }}</div>
+<div class="container">
+  <div *ngIf="timeModel$ | async as time" class="wrapper">
+    <ul class="numbers hours" [style.transform]="getTransformStyle(time.hoursFirst)">
+      <li *ngFor="let hourFirst of getRange(0, 9)">
+        <span>{{ hourFirst }}</span>
+      </li>
+    </ul>
+
+    <ul class="numbers hours" [style.transform]="getTransformStyle(time.hoursLast)">
+      <li *ngFor="let hourLast of getRange(0, 9)">
+        <span>{{ hourLast }}</span>
+      </li>
+    </ul>
+
+    <ul class="numbers minutes" [style.transform]="getTransformStyle(time.minutesFirst)">
+      <li *ngFor="let minuteFirst of getRange(0, 9)">
+        <span>{{ minuteFirst }}</span>
+      </li>
+    </ul>
+    <ul class="numbers minutes" [style.transform]="getTransformStyle(time.minutesLast)">
+      <li *ngFor="let minuteLast of getRange(0, 9)">
+        <span>{{ minuteLast }}</span>
+      </li>
+    </ul>
+
+    <ul class="numbers seconds" [style.transform]="getTransformStyle(time.secondsFirst)">
+      <li *ngFor="let secondFirst of getRange(0, 9)">
+        <span>{{ secondFirst }}</span>
+      </li>
+    </ul>
+    <ul class="numbers seconds" [style.transform]="getTransformStyle(time.secondsLast)">
+      <li *ngFor="let secondLast of getRange(0, 9)">
+        <span>{{ secondLast }}</span>
+      </li>
+    </ul>
+  </div>
 </div>
