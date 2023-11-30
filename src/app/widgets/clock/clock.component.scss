@@ -1,12 +1,19 @@
 @import "app/styles/minxins";
 
 .container {
-    position: relative;
-    padding-bottom: 20px;
+  position: relative;
+  padding-bottom: 20px;
 }
 
 .content {
   display: flex;
+}
+
+.clock-wrapper {
+  width: 160px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-settings {

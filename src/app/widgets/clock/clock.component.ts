@@ -13,7 +13,7 @@ import { ClockSize, ClockType } from './utils/enums';
 })
 export class ClockComponent {
   form = new FormGroup({
-    type: new FormControl<ClockType>(ClockType.Drum),
+    type: new FormControl<ClockType>(ClockType.Simple),
     size: new FormControl<ClockSize>(ClockSize.Middle),
   });
   readonly ClockType = ClockType;

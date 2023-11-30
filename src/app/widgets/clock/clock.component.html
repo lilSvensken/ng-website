@@ -1,6 +1,6 @@
 <div class="container">
   <div class="content">
-    <div [ngSwitch]="form.value.type">
+    <div class="clock-wrapper" [ngSwitch]="form.value.type">
       <app-simple-clock *ngSwitchCase="ClockType.Simple" />
       <app-drum-clock *ngSwitchCase="ClockType.Drum" />
       <app-mechanical-clock *ngSwitchCase="ClockType.Mechanical" />
