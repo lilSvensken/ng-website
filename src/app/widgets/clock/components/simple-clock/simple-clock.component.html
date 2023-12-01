@@ -1,1 +1,3 @@
-<time class="wrapper">{{ timeService.fullDate$ | async | date: 'h:m:s' }}</time>
+<div *ngIf="timeService.time$ | async as time" class="glow">
+  {{ formationDate(time.Hr) }}:{{ formationDate(time.Min) }}:{{ formationDate(time.Sec) }}
+</div>

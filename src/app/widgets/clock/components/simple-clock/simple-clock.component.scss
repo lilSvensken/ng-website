@@ -1,17 +1,21 @@
-.wrapper {
+.glow {
   color: #fff;
+  font-size: 40px;
   text-align: center;
-  font-size: 24px;
+  letter-spacing: 4px;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
+  font-family: var(--font-family-anton);
+  white-space: nowrap;
 }
 
-@-webkit-keyframes glow {
+@keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e50022, 0 0 40px #e50022, 0 0 50px #e50022, 0 0 60px #e50022, 0 0 70px #e50022;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e50022, 0 0 20px #e50022, 0 0 25px #e50022, 0 0 30px #e50022, 0 0 35px #e50022;
   }
 
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #e20000, 0 0 40px #e20000, 0 0 50px #e20000, 0 0 60px #e20000, 0 0 70px #e20000, 0 0 80px #e20000;
+    text-shadow: 0 0 10px #fff, 0 0 15px #e20000, 0 0 20px #e20000, 0 0 25px #e20000, 0 0 30px #e20000, 0 0 35px #e20000, 0 0 40px #e20000;
   }
 }

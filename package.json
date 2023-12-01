@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^17.0.4",
     "@angular/platform-browser-dynamic": "^17.0.4",
     "@angular/router": "^17.0.4",
+    "@gorniv/ngx-universal": "^2.2.3",
     "rxjs": "~7.8.0",
     "sass": "^1.64.1",
     "tslib": "^2.3.0",
