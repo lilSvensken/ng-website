@@ -1,9 +1,9 @@
 <div class="container">
   <div class="content">
-    <div class="clock-wrapper" [ngSwitch]="form.value.type">
-      <app-simple-clock *ngSwitchCase="ClockType.Simple" />
-      <app-drum-clock *ngSwitchCase="ClockType.Drum" />
-      <app-mechanical-clock *ngSwitchCase="ClockType.Mechanical" />
+    <div class="clock-wrapper" [ngClass]="form.value.size" [ngSwitch]="form.value.type">
+      <app-simple-clock *ngSwitchCase="ClockType.Simple" [size]="form.value.size" />
+      <app-drum-clock *ngSwitchCase="ClockType.Drum" [size]="form.value.size" />
+      <app-mechanical-clock *ngSwitchCase="ClockType.Mechanical" [size]="form.value.size" />
     </div>
 
     <button type="button" (click)="changeShowSettings()" class="btn-settings">⚙</button>

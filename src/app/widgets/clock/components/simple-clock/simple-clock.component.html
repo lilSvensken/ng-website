@@ -1,3 +1,3 @@
-<div *ngIf="timeService.time$ | async as time" class="glow">
+<div *ngIf="timeService.time$ | async as time" class="glow" [ngClass]="size">
   {{ formationDate(time.Hr) }}:{{ formationDate(time.Min) }}:{{ formationDate(time.Sec) }}
 </div>

@@ -4,7 +4,6 @@ import { PopupName, PopupsService } from 'app/shared/services/popups.service';
 import { ClockSize, ClockType } from './utils/enums';
 import { MyCookiesService } from 'app/shared/services/my-cookies.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { log } from '@angular-devkit/build-angular/src/builders/ssr-dev-server';
 
 const COOKIE_NAME = 'clockSettings';
 

@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TimeService } from 'app/shared/services/time.service';
 import { getRange } from 'app/shared/functions/getRange';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { BehaviorSubject } from 'rxjs';
+import { ClockSize } from '../../utils/enums';
 
 interface TimeDrum {
   hoursFirst: number;
@@ -21,6 +22,8 @@ interface TimeDrum {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DrumClockComponent {
+  @Input() size: ClockSize;
+
   private readonly _timeModel$ = new BehaviorSubject<TimeDrum | undefined>(undefined);
   public readonly timeModel$ = this._timeModel$.asObservable();
 

@@ -1,21 +1,12 @@
-<time class="clock" *ngIf="dateAndTimeService.time$ | async as time">
+<time *ngIf="dateAndTimeService.time$ | async as time" class="clock" [ngClass]="size">
   <div
     *ngFor="let sec of getRange(1, 60)"
-    class="clock__stroke"
+    class="stroke"
     appTransformForSecond
     [second]="sec"
   ></div>
 
-  <span
-    class="clock__hand clock__hand--hour"
-    [style.transform]="getTransformHrStyle(time.Hr, time.Min)"
-  ></span>
-  <span
-    class="clock__hand clock__hand--minute"
-    [style.transform]="getTransformStyle(time.Min)"
-  ></span>
-  <span
-    class="clock__hand clock__hand--second"
-    [style.transform]="getTransformStyle(time.Sec)"
-  ></span>
+  <span class="hand hand--hour" [style.transform]="getTransformHrStyle(time.Hr, time.Min)"></span>
+  <span class="hand hand--minute" [style.transform]="getTransformStyle(time.Min)"></span>
+  <span class="hand hand--second" [style.transform]="getTransformStyle(time.Sec)"></span>
 </time>

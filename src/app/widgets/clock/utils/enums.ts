@@ -5,7 +5,7 @@ export enum ClockType {
 }
 
 export enum ClockSize {
-  Big = 'Большой',
-  Middle = 'Средний',
-  Small = 'Маленький',
+  Big = 'bg',
+  Middle = 'md',
+  Small = 'sm',
 }

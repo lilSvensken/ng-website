@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TimeService } from 'app/shared/services/time.service';
 import { getRange } from 'app/shared/functions/getRange';
+import { ClockSize } from '../../utils/enums';
 
 @Component({
   selector: 'app-mechanical-clock',
@@ -9,6 +10,8 @@ import { getRange } from 'app/shared/functions/getRange';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MechanicalClockComponent {
+  @Input() size: ClockSize;
+
   constructor(readonly dateAndTimeService: TimeService) {}
 
   public getRange(start: number, end: number) {

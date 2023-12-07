@@ -1,9 +1,44 @@
 .container {
-  height: 100px;
   overflow: hidden;
   display: flex;
   align-content: center;
   font-family: var(--font-family-anton);
+}
+.container.bg {
+  height: 100px;
+}
+.container.bg .numbers {
+  height: 36px;
+  width: 26px;
+}
+.container.bg .symbol {
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+}
+.container.md {
+  height: 80px;
+}
+.container.md .numbers {
+  height: 18px;
+  width: 20px;
+}
+.container.md .symbol {
+  font-size: 24px;
+  height: 24px;
+  width: 24px;
+}
+.container.sm {
+  height: 60px;
+}
+.container.sm .numbers {
+  height: 0;
+  width: 14px;
+}
+.container.sm .symbol {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
 }
 
 .wrapper {
@@ -13,8 +48,6 @@
 }
 
 .numbers {
-  height: 36px;
-  width: 26px;
   padding: 0;
   position: relative;
   margin: auto;
@@ -24,7 +57,47 @@
   transition: all ease 0.5s;
   display: inline-block;
 }
-.numbers li {
+.numbers .symbol-wrapper:nth-child(1) {
+  transform: rotate(0deg);
+}
+.numbers .symbol-wrapper:nth-child(2) {
+  transform: rotate(-36deg);
+}
+.numbers .symbol-wrapper:nth-child(3) {
+  transform: rotate(-72deg);
+}
+.numbers .symbol-wrapper:nth-child(4) {
+  transform: rotate(-108deg);
+}
+.numbers .symbol-wrapper:nth-child(5) {
+  transform: rotate(-144deg);
+}
+.numbers .symbol-wrapper:nth-child(6) {
+  transform: rotate(-180deg);
+}
+.numbers .symbol-wrapper:nth-child(7) {
+  transform: rotate(-216deg);
+}
+.numbers .symbol-wrapper:nth-child(8) {
+  transform: rotate(-252deg);
+}
+.numbers .symbol-wrapper:nth-child(9) {
+  transform: rotate(-288deg);
+}
+.numbers .symbol-wrapper:nth-child(10) {
+  transform: rotate(-324deg);
+}
+.numbers.hours .symbol {
+  color: #76b041;
+}
+.numbers.minutes .symbol {
+  color: #17bebb;
+}
+.numbers.seconds .symbol {
+  color: #ffc914;
+}
+
+.symbol-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -36,56 +109,15 @@
   transform-origin: bottom;
   box-sizing: border-box;
 }
-.numbers li span {
-  height: 30px;
-  width: 30px;
+
+.symbol {
   display: inline-block;
   border-radius: 2px;
   text-align: center;
-  font-size: 30px;
   line-height: 1.2;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   transform: translateX(-50%) translateY(-40px) rotateX(90deg) rotate(90deg);
-}
-.numbers li:nth-child(1) {
-  transform: rotate(0deg);
-}
-.numbers li:nth-child(2) {
-  transform: rotate(-36deg);
-}
-.numbers li:nth-child(3) {
-  transform: rotate(-72deg);
-}
-.numbers li:nth-child(4) {
-  transform: rotate(-108deg);
-}
-.numbers li:nth-child(5) {
-  transform: rotate(-144deg);
-}
-.numbers li:nth-child(6) {
-  transform: rotate(-180deg);
-}
-.numbers li:nth-child(7) {
-  transform: rotate(-216deg);
-}
-.numbers li:nth-child(8) {
-  transform: rotate(-252deg);
-}
-.numbers li:nth-child(9) {
-  transform: rotate(-288deg);
-}
-.numbers li:nth-child(10) {
-  transform: rotate(-324deg);
-}
-.numbers.hours li span {
-  color: #76b041;
-}
-.numbers.minutes li span {
-  color: #17bebb;
-}
-.numbers.seconds li span {
-  color: #ffc914;
 }
 
 /*# sourceMappingURL=drum-clock.component.css.map */

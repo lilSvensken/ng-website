@@ -1,9 +1,53 @@
 .container {
-  height: 100px;
   overflow: hidden;
   display: flex;
   align-content: center;
   font-family: var(--font-family-anton);
+
+  &.bg {
+    height: 100px;
+
+    .numbers {
+      height: 36px;
+      width: 26px;
+    }
+
+    .symbol {
+      font-size: 30px;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &.md {
+    height: 80px;
+
+    .numbers {
+      height: 18px;
+      width: 20px;
+    }
+
+    .symbol {
+      font-size: 24px;
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &.sm {
+    height: 60px;
+
+    .numbers {
+      height: 0;
+      width: 14px;
+    }
+
+    .symbol {
+      font-size: 18px;
+      height: 18px;
+      width: 18px;
+    }
+  }
 }
 
 .wrapper {
@@ -13,8 +57,6 @@
 }
 
 .numbers {
-  height: 36px;
-  width: 26px;
   padding: 0;
   position: relative;
   margin: auto;
@@ -24,59 +66,50 @@
   transition: all ease 0.5s;
   display: inline-block;
 
-  li {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 50%;
-    width: 0;
-    transform-style: preserve-3d;
-    transform-origin: bottom;
-    box-sizing: border-box;
-
-    span {
-      height: 30px;
-      width: 30px;
-      display: inline-block;
-      border-radius: 2px;
-      text-align: center;
-      font-size: 30px;
-      line-height: 1.2;
-      backface-visibility: hidden;
-      transform-style: preserve-3d;
-      transform: translateX(-50%) translateY(-40px) rotateX(90deg) rotate(90deg);
-    }
-  }
-
   @for $i from 0 through 9 {
-    li:nth-child(#{$i + 1}) {
+    .symbol-wrapper:nth-child(#{$i + 1}) {
       transform: rotate(#{-$i*36}deg);
     }
   }
 
   &.hours {
-    li {
-      span {
+    .symbol {
         color: #76b041;
       }
-    }
   }
 
   &.minutes {
-    li {
-      span {
+    .symbol {
         color: #17bebb;
       }
-    }
   }
 
   &.seconds {
-    li {
-      span {
+    .symbol {
         color: #ffc914;
       }
-    }
   }
+}
+
+.symbol-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 50%;
+  width: 0;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  box-sizing: border-box;
+}
+
+.symbol {
+  display: inline-block;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 1.2;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: translateX(-50%) translateY(-40px) rotateX(90deg) rotate(90deg);
 }

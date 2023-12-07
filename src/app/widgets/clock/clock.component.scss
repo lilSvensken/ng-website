@@ -2,18 +2,28 @@
 
 .container {
   position: relative;
-  padding-bottom: 20px;
 }
 
 .content {
   display: flex;
+  align-items: center;
 }
 
 .clock-wrapper {
-  width: 160px;
-  height: 100px;
   display: flex;
   justify-content: center;
+
+  &.bg {
+    height: 100px;
+  }
+
+  &.md {
+    height: 80px;
+  }
+
+  &.sm {
+    height: 60px;
+  }
 }
 
 .btn-settings {

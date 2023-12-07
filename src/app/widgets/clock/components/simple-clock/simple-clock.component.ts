@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TimeService } from 'app/shared/services/time.service';
+import { ClockSize } from '../../utils/enums';
 
 @Component({
   selector: 'app-simple-clock',
@@ -8,6 +9,8 @@ import { TimeService } from 'app/shared/services/time.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleClockComponent {
+  @Input() size: ClockSize;
+
   constructor(readonly timeService: TimeService) {}
 
   formationDate(time: number): string {

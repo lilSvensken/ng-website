@@ -1,5 +1,10 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
 .glow {
-  color: #fff;
+  color: var(--main-color);
   font-size: 40px;
   text-align: center;
   letter-spacing: 4px;
@@ -9,12 +14,23 @@
   font-family: var(--font-family-anton);
   white-space: nowrap;
 }
+.glow.bg {
+  font-size: 40px;
+}
+.glow.md {
+  font-size: 28px;
+}
+.glow.sm {
+  font-size: 18px;
+}
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e50022, 0 0 20px #e50022, 0 0 25px #e50022, 0 0 30px #e50022, 0 0 35px #e50022;
+    text-shadow: 0 0 5px var(--main-color), 0 0 10px var(--main-color), 0 0 15px var(--accent-color-2), 0 0 20px var(--accent-color-2), 0 0 25px var(--accent-color-2), 0 0 30px var(--accent-color-2), 0 0 35px var(--accent-color-2);
   }
   to {
-    text-shadow: 0 0 10px #fff, 0 0 15px #e20000, 0 0 20px #e20000, 0 0 25px #e20000, 0 0 30px #e20000, 0 0 35px #e20000, 0 0 40px #e20000;
+    text-shadow: 0 0 10px var(--main-color), 0 0 15px var(--accent-color), 0 0 20px var(--accent-color), 0 0 25px var(--accent-color), 0 0 30px var(--accent-color), 0 0 35px var(--accent-color), 0 0 40px var(--accent-color);
   }
 }
+
+/*# sourceMappingURL=simple-clock.component.css.map */
